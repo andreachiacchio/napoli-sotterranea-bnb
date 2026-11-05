@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#7a1f1f">
+<title>Napoli Sotterranea BNB – Guest App</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--ink:#2a1e1a;--wine:#7a1f1f;--tufo:#c9a46b;--sea:#1f5f7a;--sand:#f8f3ea;--card:#fff;--muted:#7d6f66;--line:#ece2d2;--wa:#25D366}
+html{background:#efe6d8}
+body{font-family:Manrope,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--sand)}
+.serif{font-family:'Playfair Display',Georgia,serif}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:var(--sand);box-shadow:0 0 40px rgba(0,0,0,.15);padding-bottom:40px}
+.hero{position:relative;min-height:420px;padding:22px 22px 30px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;
+background-size:cover;background-position:center;background-image:linear-gradient(160deg,rgba(122,31,31,.78),rgba(31,95,122,.72)),url(img/photo1.jpg)}
+.top{display:flex;justify-content:flex-end;align-items:center;gap:8px}
+.pill{display:flex;background:rgba(255,255,255,.18);border-radius:999px;padding:3px}
+.pill button{border:0;background:transparent;color:#fff;font:700 13px Manrope;padding:7px 12px;border-radius:999px;cursor:pointer}
+.pill button.on{background:#fff;color:var(--wine)}
+.hero h1{font-size:32px;line-height:1.1;margin:18px 0 8px}
+.hero p{opacity:.92;font-size:15px}
+.hero .addr{margin-top:10px;font-size:13px;opacity:.9}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:-28px 16px 0;position:relative}
+.quick a{background:var(--card);border-radius:16px;padding:14px 4px;text-align:center;text-decoration:none;color:var(--ink);font-size:11.5px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.quick span{display:block;font-size:22px;margin-bottom:4px}
+section{margin:22px 16px 0}
+h2{font-size:22px;margin-bottom:10px;color:var(--wine)}
+.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;border:1px solid var(--line)}
+.card h3{font-size:16px;margin-bottom:6px}
+.card p,.card li{font-size:14.5px;line-height:1.55;color:#4a3d36}
+.card ul{padding-left:18px}
+.btn{display:inline-block;margin-top:10px;margin-right:6px;padding:10px 14px;border-radius:12px;background:var(--wine);color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.btn.alt{background:var(--sea)}.btn.wa{background:var(--wa)}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.feat div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;font-size:13.5px;font-weight:600}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gallery img{width:100%;height:120px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+.gallery img.wide{grid-column:1/-1;height:180px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:8px}
+summary{font-weight:700;cursor:pointer;font-size:15px}
+details p{margin-top:8px;font-size:14px;line-height:1.5;color:#4a3d36}
+.sos{background:#fdecea;border-color:#f3c3bd}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px;padding:0 16px}
+
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div class="top">
+    <div class="pill" id="lang"><button data-l="it" class="on">IT</button><button data-l="en">EN</button></div>
+  </div>
+  <div>
+    <p data-i="welcome"></p>
+    <h1 class="serif">Napoli Sotterranea BNB</h1>
+    <p data-i="tagline"></p>
+    <p class="addr">📍 Vico Giganti 55/A, 80138 Napoli</p>
+  </div>
+</header>
+
+<nav class="quick">
+  <a href="#wifi"><span>📶</span>WiFi</a>
+  <a href="#arrivo"><span>🗺️</span><b data-i="q_dir"></b></a>
+  <a href="#checkin"><span>🔑</span>Check-in</a>
+  <a href="#sos"><span>🆘</span><b data-i="q_sos"></b></a>
+</nav>
+
+<section>
+  <h2 class="serif" data-i="photos_t"></h2>
+  <div class="gallery">
+    <img class="wide" src="img/photo1.jpg" alt="Napoli Sotterranea BNB">
+    <img src="img/photo2.jpg" alt=""><img src="img/photo3.jpg" alt="">
+    <img src="img/photo4.jpg" alt=""><img src="img/photo5.jpg" alt="">
+    <img class="wide" src="img/photo6.jpg" alt="">
+  </div>
+</section>
+
+<section id="checkin">
+  <h2 class="serif">Check-in &amp; Check-out</h2>
+  <div class="card">
+    <p data-i="times"></p>
+    <p style="margin-top:8px" data-i="keys"></p>
+  </div>
+  <div class="card">
+    <h3 data-i="forms_t"></h3>
+    <p data-i="forms"></p>
+    <a class="btn wa" href="https://wa.me/393383963307" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="card">
+    <h3 data-i="bag_t"></h3>
+    <p data-i="bag"></p>
+  </div>
+</section>
+
+<section id="arrivo">
+  <h2 class="serif" data-i="dir_t"></h2>
+  <div class="card">
+    <p>Vico Giganti 55/A, 80138 Napoli</p>
+    <p style="margin-top:6px" data-i="door"></p>
+    <a class="btn" href="https://goo.gl/maps/X21mBfNpEHtMCbnv5" target="_blank" rel="noopener" data-i="map"></a>
+    <a class="btn alt" href="https://youtu.be/IzFKVw9GmD0" target="_blank" rel="noopener" data-i="video"></a>
+  </div>
+</section>
+
+<section id="wifi">
+  <h2 class="serif">WiFi</h2>
+  <div class="card">
+    <p>📶 <b>TIM-51523647</b><br>Password: <b>YcFPh75xkYP7TNtA6Qf3EzGZ</b></p>
+  </div>
+</section>
+
+<section>
+  <h2 class="serif" data-i="apt_t"></h2>
+  <div class="card"><p data-i="ipad"></p></div>
+</section>
+
+
+<section>
+  <h2 class="serif" data-i="guide_t"></h2>
+  <div class="card"><h3>🍕 <span data-i="pizza_t"></span></h3><ul>
+    <li><b>L'antica Pizzeria Da Michele</b> – <span data-i="p1"></span></li>
+    <li><b>Gino e Toto Sorbillo</b> – <span data-i="p2"></span></li>
+    <li><b>Pizzeria I Decumani</b> – <span data-i="p3"></span></li>
+    <li><b>Pizzeria Concettina ai Tre Santi</b> – <span data-i="p4"></span></li>
+    <li><b>Antica Pizzeria Di Matteo</b> – <span data-i="p5"></span></li>
+  </ul></div>
+  <div class="card"><h3>🍝 <span data-i="eat_t"></span></h3><ul>
+    <li><b>Trattoria Da Nennella</b> – <span data-i="e1"></span></li>
+    <li><b>Tandem Ragù</b> – <span data-i="e2"></span></li>
+  </ul></div>
+  <div class="card"><h3>🏛️ <span data-i="see_t"></span></h3><ul>
+    <li><b>Museo Cappella Sansevero</b> – <span data-i="s1"></span></li>
+    <li><b>Napoli Sotterranea</b> – <span data-i="s2"></span></li>
+    <li><b>Monastero di Santa Chiara</b> – <span data-i="s3"></span></li>
+  </ul></div>
+  <div class="card"><h3>🚇 <span data-i="tr_t"></span></h3><ul>
+    <li data-i="t1"></li><li data-i="t2"></li><li data-i="t3"></li><li data-i="t4"></li><li data-i="t5"></li>
+  </ul></div>
+  <div class="card"><h3>🛡️ <span data-i="tips_t"></span></h3><p data-i="tips"></p></div>
+</section>
+
+
+<section>
+  <h2 class="serif">FAQ</h2>
+  <details><summary data-i="fq1"></summary><p data-i="fa1"></p></details>
+  <details><summary data-i="fq2"></summary><p data-i="fa2"></p></details>
+  <details><summary data-i="fq3"></summary><p data-i="fa3"></p></details>
+  <details><summary data-i="fq4"></summary><p data-i="fa4"></p></details>
+</section>
+
+<section>
+  <h2 class="serif" data-i="fb_t"></h2>
+  <div class="card"><p data-i="fb"></p>
+  <a class="btn wa" id="waFb" href="#" target="_blank" rel="noopener" data-i="fb_b"></a>
+  <p style="margin-top:8px;font-size:12px">+39 338 396 3307</p></div>
+</section>
+
+<section id="sos">
+  <h2 class="serif" data-i="q_sos"></h2>
+  <div class="card sos">
+    <p><b>112</b> – <span data-i="sos112"></span></p>
+    <p style="margin-top:6px"><b>Host</b>: +39 338 396 3307</p>
+    <a class="btn" href="tel:112">📞 112</a>
+    <a class="btn wa" id="waHost" href="#" target="_blank" rel="noopener">WhatsApp Host</a>
+  </div>
+</section>
+
+<footer data-i="foot"></footer>
+</div>
+
+
+<script>
+const APT_LABEL="Napoli Sotterranea BNB";
+const T={it:{welcome:'Benvenuti a Napoli',tagline:'Siamo qui per qualsiasi cosa: scriveteci quando volete.',q_dir:'Come arrivare',q_sos:'Emergenze',times:'Self check-in dalle <b>14:00</b>. Check-out entro le <b>10:00</b>.',keys:'🔑 Le chiavi sono lasciate in casa per il self check-in.',forms_t:'Moduli obbligatori del Comune di Napoli',forms:"Prima dell'arrivo compilate i dati degli ospiti e la tassa di soggiorno. Per il modulo del Comune scrivimi su WhatsApp e te lo mando.",forms_b:'Compila i moduli',bag_t:'Bagagli',bag:"Non è possibile lasciare i bagagli nell'appartamento prima del check-in o dopo il check-out. Vicino c'è un deposito bagagli in <b>Via dei Tribunali 193, 80138 Napoli</b>.",dir_t:'Come arrivare',door:"Appena entrati nell'atrio, la porta d'ingresso è quella <b>bianca a sinistra</b>.",map:'📍 Apri mappa',video:'▶️ Video tutorial ingresso',speed:'Internet fino a 1 Gb/s.',apt_t:"L'appartamento",photos_t:'Foto',f_towel:'🧺 Kit asciugamani (piccolo, medio, grande) per persona',f_tub:'🛁 Vasca freestanding',f_ac:'❄️ Aria condizionata',f_nes:'☕ Cialde Nespresso',f_alexa:'💡 Alexa e luci intelligenti',f_net:'⚡ Internet fino a 1 Gb/s',f_keys:'🔑 Chiavi fisiche sul tavolino sotto la TV',guide_t:'Guida di Napoli',pizza_t:'Pizzerie',p1:"solo margherita e marinara. Spesso c'è la coda: prendete uno spritz nell'attesa.",p2:'storica: provate una pizza diversa dalla margherita.',p3:'forno a legna, impasto leggero.',p4:'nel quartiere Sanità.',p5:'da asporto: crocchette, zeppole e frittatine di pasta.',eat_t:'Mangiare',e1:'cucina casalinga, porzioni abbondanti: ragù e parmigiana.',e2:'panino con polpette al ragù o alla genovese.',see_t:'Da visitare',s1:'il Cristo velato. Prenotate online.',s2:'la città sotto la città.',s3:'chiostro maiolicato e monastero.',tr_t:'Muoversi',t1:'Metro linee 1 e 2 per spostarsi in città.',t2:'Taxi: usate quelli ufficiali.',t3:"Alibus: collegamento con l'aeroporto.",t4:'Circumvesuviana da Garibaldi per Pompei ed Ercolano.',t5:'Controllate sempre orari e tariffe sui siti ufficiali dei gestori.',tips_t:'Consigli',tips:'Come in tutte le grandi città, nelle zone affollate tenete borse e telefoni ben chiusi e vicino a voi.',fq1:'A che ora posso entrare?',fa1:'Dalle 14:00, in autonomia. Le chiavi sono lasciate in casa.',fq2:'Posso lasciare i bagagli prima o dopo?',fa2:'Non in appartamento: usate il deposito in Via dei Tribunali 193.',fq3:'Cosa sono i moduli del Comune?',fa3:'Sono obbligatori: dati degli ospiti e tassa di soggiorno. Trovate le indicazioni nella sezione Check-in.',fq4:'Ho un problema in casa, cosa faccio?',fa4:'Scriveteci su WhatsApp: rispondiamo il prima possibile. Per emergenze chiamate il 112.',fb_t:'Dicci come va',fb:'Qualcosa non funziona o potrebbe andare meglio? Oppure va tutto bene? Diteci tutto, ci aiuta a migliorare.',fb_b:'💬 Scrivici su WhatsApp',fbmsg:'Ciao Andrea! Ecco come sta andando il soggiorno a Napoli Sotterranea BNB.\nCosa va bene: \nCosa non va / da migliorare: ',sos112:'numero unico europeo per le emergenze',foot:'Buon soggiorno a Napoli ❤️',ipad:'📱 iPad nel salone: mappa, meteo e Safari per cercare ristoranti e luoghi.',wifi_qr:'Scansiona il QR code sulla card di benvenuto in casa, oppure scrivimi su WhatsApp.'},en:{welcome:'Welcome to Naples',tagline:"We're here for anything: message us anytime.",q_dir:'Directions',q_sos:'Emergency',times:'Self check-in from <b>2:00 PM</b>. Check-out by <b>10:00 AM</b>.',keys:'🔑 Keys are left in the apartment for self check-in.',forms_t:'Mandatory City of Naples forms',forms:'Before arrival, please fill in guest details and the tourist tax. For the city registration form, message me on WhatsApp.',forms_b:'Fill in the forms',bag_t:'Luggage',bag:"Luggage can't be left in the apartment before check-in or after check-out. Nearby luggage storage: <b>Via dei Tribunali 193, 80138 Napoli</b>.",dir_t:'Getting there',door:'Once inside the hallway, the entrance door is the <b>white one on the left</b>.',map:'📍 Open map',video:'▶️ Entry video tutorial',speed:'Internet up to 1 Gb/s.',apt_t:'The apartment',photos_t:'Photos',f_towel:'🧺 Towel set (small, medium, large) per person',f_tub:'🛁 Freestanding bathtub',f_ac:'❄️ Air conditioning',f_nes:'☕ Nespresso pods',f_alexa:'💡 Alexa & smart lights',f_net:'⚡ Internet up to 1 Gb/s',f_keys:'🔑 Physical keys on the small table under the TV',guide_t:'Naples guide',pizza_t:'Pizzerias',p1:"margherita and marinara only. There's often a queue: grab a spritz while you wait.",p2:'historic: try something other than the margherita.',p3:'wood-fired oven, light dough.',p4:'in the Sanità district.',p5:'takeaway: crocchette, zeppole and frittatine di pasta.',eat_t:'Eating',e1:'home-style cooking, generous portions: ragù and parmigiana.',e2:'sandwich with meatballs in ragù or genovese sauce.',see_t:'Must see',s1:'the Veiled Christ. Book online.',s2:'the city beneath the city.',s3:'majolica cloister and monastery.',tr_t:'Getting around',t1:'Metro lines 1 and 2 across the city.',t2:'Taxis: use official ones.',t3:'Alibus: airport connection.',t4:'Circumvesuviana from Garibaldi to Pompeii and Herculaneum.',t5:"Always check timetables and fares on the operators' official websites.",tips_t:'Tips',tips:'As in any big city, keep bags and phones closed and close to you in crowded areas.',fq1:'What time can I get in?',fa1:'From 2:00 PM, on your own. Keys are left in the apartment.',fq2:'Can I drop luggage before or after?',fa2:'Not in the apartment: use the storage at Via dei Tribunali 193.',fq3:'What are the City forms?',fa3:"They're mandatory: guest details and tourist tax. See the Check-in section.",fq4:"Something's wrong in the apartment?",fa4:"Message us on WhatsApp: we'll reply as soon as possible. For emergencies call 112.",fb_t:"Tell us how it's going",fb:'Something not working or could be better? Or is everything great? Tell us, it helps us improve.',fb_b:'💬 Message us on WhatsApp',fbmsg:"Hi Andrea! Here's how my stay at Napoli Sotterranea BNB is going.\nWhat's good: \nWhat's not / could improve: ",sos112:'European emergency number',foot:'Enjoy your stay in Naples ❤️',ipad:'📱 iPad in the living room: maps, weather and Safari to look up restaurants and places.',wifi_qr:'Scan the QR code on the welcome card in the apartment, or message me on WhatsApp.'}};
+
+const WA="393383963307";
+let lang="it";
+function render(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i]").forEach(e=>{const v=T[lang][e.dataset.i];if(v!==undefined)e.innerHTML=v;});
+  const base="https://wa.me/"+WA;
+  document.getElementById("waFb").href=base+"?text="+encodeURIComponent(T[lang].fbmsg+"\n("+APT_LABEL+")");
+  document.getElementById("waHost").href=base;
+  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===lang));
+}
+document.querySelectorAll("#lang button").forEach(b=>b.onclick=()=>{lang=b.dataset.l;const u=new URL(location.href);u.searchParams.set("lang",lang);history.replaceState(null,"",u);render()});
+const q=new URLSearchParams(location.search);
+if(q.get("lang")==="en")lang="en";
+render();
+
+</script>
+</body>
+</html>
